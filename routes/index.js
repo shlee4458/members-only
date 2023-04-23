@@ -15,7 +15,7 @@ router.post('/sign-up', auth_controller.signup_post)
 /** LOGIN/LOGOUT */
 router.get('/log-in', auth_controller.login_get)
 router.post('/log-in', auth_controller.login_post)
-router.post('/log-out', auth_controller.logout_post)
+router.get('/log-out', auth_controller.logout_get)
 
 /** BECOME A MEMBER */
 router.get('/member', user_controller.member_get)
@@ -23,8 +23,8 @@ router.post('/member', user_controller.member_post)
 
 /** CREATE A MESSAGE */
 router.get('/message', message_controller.create_message_get)
-router.post('/message', message_controller.create_message_post)
-router.post('/message', message_controller.delete_message_post)
+// router.post('/message', message_controller.create_message_post)
+// router.post('/message', message_controller.delete_message_post)
 
 /** BECOME A ADMIN */
 router.post('/admin', user_controller.admin_get)

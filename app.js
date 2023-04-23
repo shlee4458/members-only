@@ -22,6 +22,11 @@ const connection = mongoose.createConnection(mongoDB, {
   useUnifiedTopology: true
 });
 
+main().catch(err => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
+
 // Set up session
 const MongoStore = require('connect-mongo');
 const sessionStore = MongoStore.create({ mongoUrl: mongoDB, collection: 'sessions' });
@@ -37,7 +42,6 @@ app.use(session({
 }));
 
 // passport and session
-
 require('./config/passport') // require the entire pasport config module
 app.use(passport.initialize());
 app.use(passport.session());
