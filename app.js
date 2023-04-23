@@ -51,6 +51,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Access the user object from anywhere in our application
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

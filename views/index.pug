@@ -18,63 +18,22 @@ block content
       each message in messages
         div.msg-container
           div.msg-container-inner-left
-            if (!user || !user.member) 
-              div.msg-container-inner-avatar.giorno-anon
-            else 
-              if (user && user.member)
-                if (message.user.avatar==="jonathan")
-                  div.msg-container-inner-avatar.jonathan
-                if (message.user.avatar==="joseph")
-                  div.msg-container-inner-avatar.joseph
-                if (message.user.avatar==="jotaro")
-                  div.msg-container-inner-avatar.jotaro
-                if (message.user.avatar==="josuke")
-                  div.msg-container-inner-avatar.josuke
-                if (message.user.avatar==="giorno")
-                  div.msg-container-inner-avatar.giorno
-                if (message.user.avatar==="jolyne")
-                  div.msg-container-inner-avatar.jolyne
+            div.msg-container-inner-avatar.giorno-anon
           div.msg-container-inner-right
             //- Render usernames of messages only if the user is logged in and is a member
             if (user && user.member)
               h4.msg-title= message.title
               p.msg-text= message.text
               div.msg-info
-                if (user && user.member)
-                  if (message.user.avatar==="jonathan")
-                    div.avatar-icon.jonathan
-                  if (message.user.avatar==="joseph")
-                    div.avatar-icon.joseph
-                  if (message.user.avatar==="jotaro")
-                    div.avatar-icon.jotaro
-                  if (message.user.avatar==="josuke")
-                    div.avatar-icon.josuke
-                  if (message.user.avatar==="giorno")
-                    div.avatar-icon.giorno
-                  if (message.user.avatar==="jolyne")
-                    div.avatar-icon.jolyne
-                p Posted by 
-                  span.msg-username #{message.user.username}
-                p.msg-date= message.date
+                div.avatar-icon.jolyne
+              p Posted by 
+                span.msg-username #{message.user.username}
+              p.msg-date= message.date
             else
               h4.msg-title= message.title
               p.msg-text= message.text
               div.msg-info
-                if (user && user.member)
-                  if (message.user.avatar==="jonathan")
-                    div.avatar-icon.jonathan
-                  if (message.user.avatar==="joseph")
-                    div.avatar-icon.joseph
-                  if (message.user.avatar==="jotaro")
-                    div.avatar-icon.jotaro
-                  if (message.user.avatar==="josuke")
-                    div.avatar-icon.josuke
-                  if (message.user.avatar==="giorno")
-                    div.avatar-icon.giorno
-                  if (message.user.avatar==="jolyne")
-                    div.avatar-icon.jolyne
-                else
-                  div.avatar-icon.giorno-anon
+                div.avatar-icon.giorno-anon
                 p Posted by 
                   span.msg-username Anonymous
                 p Date: N/A
